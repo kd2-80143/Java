@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Tester {
@@ -11,11 +12,13 @@ public class Tester {
 		list.add("Yash");
 		list.add("Vidit");
 		list.add("Ayush");
+		list.add("Swarnima");
 		
-		String c = Collections.max(list);
-		String d = Collections.min(list);
-		System.out.println(c);
-		System.out.println(d);
+		String c = Collections.max(list, Comparator.comparingInt(String::length));
+		System.out.println("String with highest length : " + c);
+		
+		//String d = Collections.min(list, Comparator.comparingInt(String::length));
+		//System.out.println(d);
 		
 		
 
