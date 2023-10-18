@@ -66,15 +66,17 @@ public class BookDetails {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		BookDetails other = (BookDetails) obj;
-		return Objects.equals(authorName, other.authorName) && Objects.equals(isbn, other.isbn)
-				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) && quantity == other.quantity;
+		if (this == obj)
+			return true;
+		if (obj instanceof BookDetails)
+		{
+		 BookDetails other = (BookDetails) obj;
+		 if(this.isbn.equals(other.isbn))
+				return true;
+		}
+		return false;
 	}
 	
 }
