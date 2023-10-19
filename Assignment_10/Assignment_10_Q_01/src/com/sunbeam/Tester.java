@@ -3,6 +3,7 @@ package com.sunbeam;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -71,9 +72,13 @@ public class Tester {
 				
 			break;
 			case 2:
-				Collections.shuffle(list);
-				for(BookDetails bd: list )
-					bd.displayData();
+				Iterator<BookDetails> itr = list.iterator();
+				while(itr.hasNext())
+				{
+					BookDetails b1 =itr.next();
+					System.out.println(b1);
+				}
+					
 			break;
 			case 3:
 				System.out.println("Enter isbn to search :");

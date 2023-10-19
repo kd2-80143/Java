@@ -78,5 +78,11 @@ public class BookDetails {
 		}
 		return false;
 	}
+	@Override
+	public String toString() {
+		return "BookDetails [isbn=" + isbn + ", price=" + price + ", authorName=" + authorName + ", quantity="
+				+ quantity + "]";
+	}
+	
 	
 }
