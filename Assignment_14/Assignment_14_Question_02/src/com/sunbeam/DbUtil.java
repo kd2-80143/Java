@@ -1,0 +1,44 @@
+package com.sunbeam;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class DbUtil {
+	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/classwork";
+	private static final String DB_USER= "kd2_80143_madhurgupta";
+	private static final String DB_PASSWD = "manager";
+	
+	static {
+		try {
+		Class.forName(DB_DRIVER);
+		}
+		catch(ClassNotFoundException e) 
+		{
+			e.printStackTrace();
+			System.exit(1);
+		}
+	}
+//	static Date parseDate(String str) {
+//		try {
+//			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+//			Date date = sdf.parse(str);
+//			return date;
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//			return null;
+//		}
+//	}
+	
+	public static Connection getConnection() throws SQLException {
+		Connection con = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWD);
+		return con;
+		
+	}
+	
+}
+
